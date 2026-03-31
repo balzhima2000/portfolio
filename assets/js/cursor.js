@@ -96,8 +96,8 @@
       cursorRoot.style.display = 'none'
       return
     }
-    cursorRoot._x = e.clientX - 12
-    cursorRoot._y = e.clientY - 12
+    cursorRoot._x = e.clientX + 4
+    cursorRoot._y = e.clientY + 16
     cursorRoot.style.display = 'flex'
     cursorRoot.style.transform = `translate(${cursorRoot._x}px, ${cursorRoot._y}px) rotate(${rotation}deg)`
   }

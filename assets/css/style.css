@@ -27,12 +27,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  cursor: none;
   width: auto;
-}
-
-button, a, input, textarea, select {
-  cursor: none;
 }
 
 @media (hover: none) {
@@ -104,7 +99,6 @@ main {
   color: var(--text);
   padding: 4px 10px;
   border-radius: 999px;
-  cursor: none;
   user-select: none;
   white-space: nowrap;
   transition: color 0.15s;
@@ -189,7 +183,6 @@ main {
   padding: 7px 14px 7px 10px;
   width: fit-content;
   border: none;
-  cursor: none;
   font-family: var(--font-body);
   transition: background 0.15s;
   max-width: 100%;
@@ -365,10 +358,21 @@ main {
 }
 
 .work-card {
-  padding-right: 20px;
-  padding-left: 20px;
   display: block;
   width: 100% !important;
+  overflow: visible;
+}
+
+.work-card .wc-title {
+  pointer-events: auto;
+}
+
+.work-card .wc-meta {
+  pointer-events: none;
+}
+
+.work-card .wc-title a {
+  pointer-events: auto;
 }
 
 .work-card.under-construction,
@@ -377,34 +381,44 @@ main {
 }
 
 .swiper-wrapper {
-  box-sizing: initial;
-  display: flex;
-  height: 100%;
-  position: relative;
-  transition-property: transform;
+  box-sizing: border-box;
   width: 100%;
-  z-index: 1;
-  gap: 5px;
-  overflow: auto !important;
-  scrollbar-width: none;
-  border: 0px;
   height: 40vh;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: auto;
+  gap: 10px;
+  padding: 0 20px;
+  scrollbar-width: none;
+  touch-action: pan-y;
 }
 
 .wc-thumb {
-  width: 100%;
+  display: block;
+  height: 100%;
   aspect-ratio: 4/3;
-  overflow: visible;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+  margin-right: 5px;
+  overflow: hidden;
+}
+
+.wc-thumb:last-child {
+  margin-right: 0;
 }
 
 .wc-meta {
   display: flex;
   flex-direction: row;
-  padding-top: 10px;
+  padding: 10px 20px 0 20px;
   place-content: center space-between;
   align-content: center;
   gap: 20px;
   width: 100% !important;
+  box-sizing: border-box;
 }
 .wc-title { 
   display: flex;
@@ -446,12 +460,12 @@ main {
   align-items: center;
   width: fit-content;
   height: min-content;
-  padding: 3px 5px;
+  padding: 1px 4px;
   background-color: rgb(247, 209, 23);
   border: 0.5px solid var(--text);
-  box-shadow: 0 0 0 3px rgb(247, 209, 23);
+  box-shadow: 0 0 0 2.5px rgb(247, 209, 23);
   border-radius: 30px;
-  font-size: 11px;
+  font-size: 9px;
   color: var(--text);
   white-space: nowrap;
 }
@@ -535,13 +549,14 @@ a.nav-item.archive {
   display: block;
   width: 100%;
   height: auto;
+  cursor: pointer;
 }
 
 .archive-item video {
   display: block;
   width: 100%;
   height: auto;
-  cursor: none !important;
+  cursor: pointer;
 }
 
 /*.archive-img:hover {
@@ -573,7 +588,7 @@ a.nav-item.archive {
   gap: 20px;
 }
 
-/* ── CLARA CASE PAGE ─────────────────────────────────── */
+/* ── CASE PAGE ─────────────────────────────────── */
 .case {
   display: flex;
   flex-direction: column;
@@ -592,6 +607,31 @@ a.nav-item.archive {
   text-align: center;
   max-width: 600px;
   padding: 0 20px;
+}
+
+.case-meta {
+  display: flex;
+  flex-direction: column;
+  gap: -2px;
+  text-align: center;
+   font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--text);
+}
+.case-link {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.case-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
 .case-client {
@@ -797,8 +837,6 @@ display: flex;
 }
 
   .work-card {
-  padding-right: 20px;
-  padding-left: 20px;
   width: 100% !important;
 }
 
