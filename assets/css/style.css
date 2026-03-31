@@ -625,7 +625,7 @@ a.nav-item.archive {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.65;
-  color: var(--text);
+  color: var(--muted);
 }
 
 .case-link:hover {
@@ -672,7 +672,7 @@ a.nav-item.archive {
 
 .case-image-two {
   width: 100%;
-  max-width: 800px;
+  max-width: 100%;
   padding: 0 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -698,7 +698,7 @@ a.nav-item.archive {
 }
 
 .case-text-block {
-  max-width: 560px;
+  max-width: 80vw;
   margin: 0 auto;
 }
 
