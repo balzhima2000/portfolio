@@ -374,6 +374,12 @@ main {
   display: block;
   width: 100% !important;
   overflow: visible;
+  /* Grid items default to min-width:auto, i.e. they refuse to shrink below their
+     min-content — so this card stretched to fit its carousel's full contents
+     (~2800px) and the whole page scrolled sideways instead of the carousel
+     scrolling inside it. min-width:0 lets the card stay at the column width so
+     .swiper-wrapper's overflow-x can do its job. */
+  min-width: 0;
 }
 
 .work-card .wc-title {
@@ -419,6 +425,14 @@ main {
   display: block;
   height: 100%;
   aspect-ratio: 4/3;
+  /* Opt out of the global `img { max-width: 100% }`. These live in a
+     horizontally scrolling carousel, so they're meant to be wider than their
+     container — that's what there is to scroll. On a phone the box wants to be
+     ~450px wide (338 tall x 4/3) but the container is only ~350px, so max-width
+     clamped the width while height:100% held the height, squashing the box from
+     4:3 to nearly square and making object-fit crop the photo to the wrong
+     shape. Only bit below ~600px, where the screen is narrower than a thumb. */
+  max-width: none;
   object-fit: cover;
   object-position: center;
   flex-shrink: 0;
