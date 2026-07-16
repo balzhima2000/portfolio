@@ -444,6 +444,15 @@ main {
   margin-right: 0;
 }
 
+/* Each project's photos share one native format, so the card declares it and the
+   thumbnails aren't cropped to fit. Default above is 4:3, which matches the
+   NO TO RACISM spreads and the Coming Soon placeholder (all 1200x900). Add
+   `ratio-3-2` for a card whose photos are 3:2 — the YES YOU CAN set is
+   1600x1068 (1.498), which the 4:3 box was slicing 11% off the sides of. */
+.work-card.ratio-3-2 .wc-thumb {
+  aspect-ratio: 3/2;
+}
+
 .wc-meta {
   display: flex;
   flex-direction: row;
