@@ -460,15 +460,19 @@ main {
   align-items: center;
   width: fit-content;
   height: min-content;
-  padding: 5px 12px;
+  padding: 6px 14px;
   /* Two-color dashed "caution" border (near-black + amber) that follows the
-     rounded corners — two offset dashed strokes drawn as an inline SVG. */
-  background-color: #f7f6f2;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='34' preserveAspectRatio='none'%3E%3Crect x='1' y='1' width='118' height='32' rx='9' ry='9' fill='none' stroke='%23222222' stroke-width='2' stroke-dasharray='6 18' vector-effect='non-scaling-stroke'/%3E%3Crect x='1' y='1' width='118' height='32' rx='9' ry='9' fill='none' stroke='%23E3A72F' stroke-width='2' stroke-dasharray='6 18' stroke-dashoffset='-12' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+     rounded corners: two offset dashed rounded-rect strokes drawn as an inline
+     SVG. pathLength normalises the dash units so 10 dash cycles distribute
+     evenly around the whole perimeter with no seam, and the SVG's proportions
+     match the tag so the dashes render uniform rather than squashed on the
+     short edges. Fill stays transparent so the page background shows through. */
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='132' height='24'%3E%3Crect x='1' y='1' width='130' height='22' rx='6' ry='6' pathLength='300' fill='none' stroke='%23222222' stroke-width='2' stroke-dasharray='6 14' vector-effect='non-scaling-stroke'/%3E%3Crect x='1' y='1' width='130' height='22' rx='6' ry='6' pathLength='300' fill='none' stroke='%23E3A72F' stroke-width='2' stroke-dasharray='6 14' stroke-dashoffset='-10' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
-  border-radius: 9px;
+  border-radius: 6px;
   font-size: 9px;
   color: var(--text);
   white-space: nowrap;
