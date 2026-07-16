@@ -760,9 +760,9 @@ a.nav-item.archive {
   .grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 20px;
-    /* Top padding clears the fixed nav, which floats over the page. Matches the
-       100px the archive and case pages already use. Once the portrait moved to
-       the top of the grid there was nothing holding it clear of the nav. */
+    /* Top padding clears the fixed nav, which floats over the page and would
+       otherwise sit on top of the first row. Matches the 100px the archive and
+       case pages already use. */
     padding: 100px 20px 20px !important;
     align-items: start;
     justify-items: stretch;
@@ -794,15 +794,8 @@ display: flex;
   }
 
   .col-center {
-    /* Tablet pairs the portrait with the bio rather than giving it a full-width
-       row of its own: order:-1 pulls it first (in source order it sits third,
-       which lands it mid-grid), and taking a single column puts the bio beside
-       it. A full-width row spent 373px of height before any copy and left ~360px
-       empty either side of a 280px photo. Mobile drops back to one column and
-       re-centres it below. */
-    grid-column: span 1;
+    grid-column: span 2;
     justify-self: stretch;
-    order: -1;
   }
 
   .block {
@@ -827,11 +820,8 @@ display: flex;
     text-align: left !important;
   }
 
-  /* Sit the portrait at the start of its column so it reads as a pair with the
-     bio next to it. Mobile re-centres this below, where it's the only thing in
-     the row. */
   .portrait-wrap {
-    margin: 0;
+    margin: 0 auto;
   }
 
   /* Tablet font sizes */
