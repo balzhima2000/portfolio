@@ -405,7 +405,14 @@ main {
   gap: 10px;
   padding: 0 20px;
   scrollbar-width: none;
-  touch-action: pan-y;
+  /* Must stay `auto`. This was `pan-y`, which told the browser to honour only
+     vertical touch gestures — but horizontal is the ONLY axis this element
+     scrolls, so the carousel couldn't be swiped on any touch device (it still
+     worked with a mouse, which is why it looked fine on desktop).
+     `auto` resolves by gesture direction: swipe sideways and the carousel
+     scrolls; swipe vertically and, since overflow-y is hidden, the gesture
+     bubbles up and scrolls the page. Both work. */
+  touch-action: auto;
 }
 
 .wc-thumb {
