@@ -30,8 +30,8 @@
   const lenis = new Lenis({
     duration: 1,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smooth: true,
-    smoothTouch: false,
+    smoothWheel: true,
+    syncTouch: false,
   });
 
   function raf(time) {
@@ -116,13 +116,18 @@
       </div>
       <div class="archive-item">
         <div class="archive-title"></div>
-        <img src="img/archive/img00002.webp" alt="Photograph of the Even Case cassette tape release on black" width="1080" height="1080" loading="lazy" decoding="async" class="archive-img" />
-        
+        <img src="img/archive/img00013.webp" alt="Poster for Moonrice Collective at Nuna Talpiot, a Korean bar in Haifa — orange dot-matrix type over kimchi stew" width="1132" height="1600" loading="lazy" decoding="async" class="archive-img" />
+
       </div>
       <div class="archive-item">
         <div class="archive-title"></div>
         <video src="img/archive/img00003.mp4" loop="" preload="auto" muted="" playsinline="" style="cursor: auto; width: 100%; height: auto; border-radius: 0px; display: block; object-fit: cover; background-color: rgba(0, 0, 0, 0); object-position: 50% 50%; pointer-events: auto;" autoplay=""></video>
-        
+
+      </div>
+      <div class="archive-item">
+        <div class="archive-title"></div>
+        <video src="img/archive/img00009.mp4" loop="" preload="auto" muted="" playsinline="" style="cursor:auto;width:100%;height:auto;border-radius:0px;display:block;object-fit:cover;background-color:rgba(0, 0, 0, 0);object-position:50% 50%" autoplay=""></video>
+
       </div>
     </div>
   </main>
