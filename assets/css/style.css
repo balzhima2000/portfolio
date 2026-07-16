@@ -456,23 +456,31 @@ main {
 }
 
 .wc-tags-uc {
-  place-content: center;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   width: fit-content;
-  height: min-content;
-  padding: 6px 14px;
-  /* Two-color dashed "caution" border (near-black + amber) that follows the
-     rounded corners: two offset dashed rounded-rect strokes drawn as an inline
-     SVG. pathLength normalises the dash units so 10 dash cycles distribute
-     evenly around the whole perimeter with no seam, and the SVG's proportions
-     match the tag so the dashes render uniform rather than squashed on the
-     short edges. Fill stays transparent so the page background shows through. */
+  /* Height is pinned to the SVG's own height (24) so the background scales 1:1
+     vertically. Left to hug its content the tag came out 23px, and that 23/24
+     squash put the top and bottom strokes on different sub-pixel phases —
+     antialiasing then rendered the bottom edge visibly lighter than the top. */
+  height: 24px;
+  padding: 0 14px;
+  /* Two-color "caution" border (near-black + amber) drawn as an inline SVG:
+     two dashed pill strokes, the amber offset by exactly one dash so it fills
+     the black's gaps — the ring is solid black-then-amber with no background
+     showing through. pathLength normalises the dash units so 14 pairs
+     distribute evenly around the perimeter with no seam, and the SVG's
+     proportions match the tag so the segments render uniform. The rect's rx
+     (11 = half its height) makes the stroke's outer edge a pill that lines up
+     exactly with the element's border-radius, so nothing gets clipped.
+     Fill stays transparent so the page background shows through. */
   background-color: transparent;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='132' height='24'%3E%3Crect x='1' y='1' width='130' height='22' rx='6' ry='6' pathLength='300' fill='none' stroke='%23222222' stroke-width='2' stroke-dasharray='6 14' vector-effect='non-scaling-stroke'/%3E%3Crect x='1' y='1' width='130' height='22' rx='6' ry='6' pathLength='300' fill='none' stroke='%23E3A72F' stroke-width='2' stroke-dasharray='6 14' stroke-dashoffset='-10' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='132' height='24'%3E%3Crect x='1' y='1' width='130' height='22' rx='11' ry='11' pathLength='280' fill='none' stroke='%23222222' stroke-width='2' stroke-dasharray='10 10' vector-effect='non-scaling-stroke'/%3E%3Crect x='1' y='1' width='130' height='22' rx='11' ry='11' pathLength='280' fill='none' stroke='%23E3A72F' stroke-width='2' stroke-dasharray='10 10' stroke-dashoffset='-10' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
-  border-radius: 6px;
+  border-radius: 999px;
   font-size: 9px;
   color: var(--text);
   white-space: nowrap;
