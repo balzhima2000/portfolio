@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clara Venice - Balzhima</title>
-  <meta name="description" content="Case study by Balaganova Balzhima: Clara Venice website UX/UI design." />
+  <title>Net Worth Tracker - Balzhima</title>
+  <meta name="description" content="A product design case study: redesigning a personal net worth tracker for clarity and trust." />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f6f6" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#151515" />
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-3.png" media="(prefers-color-scheme: light)" />
@@ -12,19 +12,36 @@
   <link rel="alternate icon" type="image/png" sizes="32x32" href="img/favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="img/Apple%20Touch.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://balzhima.com/clara-case" />
-  <meta property="og:title" content="Clara Venice - Balzhima" />
-  <meta property="og:description" content="Case study by Balaganova Balzhima: Clara Venice website UX/UI design." />
+  <meta property="og:url" content="https://balzhima.com/networth" />
+  <meta property="og:title" content="Net Worth Tracker - Balzhima" />
+  <meta property="og:description" content="A product design case study: redesigning a personal net worth tracker for clarity and trust." />
   <meta property="og:image" content="https://balzhima.com/img/Social%20Preview.png" />
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:title" content="Clara Venice - Balzhima" />
-  <meta property="twitter:description" content="Case study by Balaganova Balzhima: Clara Venice website UX/UI design." />
+  <meta property="twitter:title" content="Net Worth Tracker - Balzhima" />
+  <meta property="twitter:description" content="A product design case study: redesigning a personal net worth tracker for clarity and trust." />
   <meta property="twitter:image" content="https://balzhima.com/img/Social%20Preview.png" />
-  <link rel="canonical" href="https://balzhima.com/clara-case" />
+  <link rel="canonical" href="https://balzhima.com/networth" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Codystar:wght@400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis({
+    duration: 1,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+    syncTouch: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+
 </head>
 <body>
 
@@ -32,7 +49,7 @@
     <div class="nav-track" id="navTrack">
       <div class="nav-pill" id="navPill"></div>
       <a href="/" class="nav-item">ABOUT</a>
-      <a href="/works" class="nav-item">WORKS</a>
+      <a href="/works" class="nav-item active">WORKS</a>
       <a href="/archive" class="nav-item">ARCHIVE</a>
     </div>
   </nav>
@@ -42,16 +59,20 @@
     <!-- HERO -->
     <section class="case-hero">
     <section class="title-block">
-      <p class="case-client">CLARA VENICE</p>
-      <h1 class="case-title">Designing the Claraverse: Building a Playful Digital World for a Music Artist</h1>
+      <p class="case-client">NET WORTH TRACKER</p>
+      <h1 class="case-title">Redesigning a personal finance app for clarity and trust</h1>
     </section>
       <div class="case-tags">
-        <span class="wc-tags">freelance</span>
-        <span class="wc-tags">website</span>
-        <span class="wc-tags">UX</span>
+        <span class="wc-tags">product design</span>
         <span class="wc-tags">UI</span>
+        <span class="wc-tags">UX</span>
+        <span class="wc-tags">design system</span>
       </div>
     </section>
+
+      <div class="case-meta">
+        <p class="case-date">Product design · UI/UX · Design system, 2026</p>
+      </div>
 
     <!-- HERO IMAGE -->
     <section class="case-image-full">
@@ -61,7 +82,7 @@
     <!-- BRIEF -->
     <section class="case-section">
       <div class="case-text-block">
-        <p class="case-body"><span class="case-label-inline">The Brief</span> You were brought in through a design agency as a freelancer to design the pages and UX/UI for a Canadian music artist's website. The creative direction called for something playful and experimental — not a standard artist site, but something that felt like entering a world. Clara's brand revolves around concepts like sonic dimensions, frequencies, and a fictional universe called the Claraverse.</p>
+        <p class="case-body"><span class="case-label-inline">The Brief</span> A personal net worth tracker for the financially literate, FIRE-minded investor — someone who wants to check their finances at a glance and, now and then, dive deep. The existing app worked, but it read like a spreadsheet: no visual hierarchy, inconsistent number formatting, and the features people used most were buried next to the ones they rarely touched. The goal was to rebuild trust through clarity. <em>[Replace with your own framing of the problem and constraints.]</em></p>
       </div>
     </section>
 
@@ -70,10 +91,10 @@
       <img src="img/coming.png" alt="" width="1200" height="900" loading="lazy" decoding="async" class="case-img" />
     </section>
 
-    <!-- TEXT SECTION -->
+    <!-- APPROACH -->
     <section class="case-section">
       <div class="case-text-block">
-        <p class="case-body"><span class="case-label-inline">The Approach</span> Add your text here. Describe your design process, decisions, and outcomes. You can duplicate these sections as needed.</p>
+        <p class="case-body"><span class="case-label-inline">The Approach</span> I led with a single principle: an element's prominence should match how often it's used and how relevant it is in that moment — checking-mode first, deep-dive second. Colour was tied to meaning rather than decoration: the interface stays greyscale except where money moves, with lime for gains and orange for losses. A token-first design system produced light and dark modes from one source of truth. <em>[Add your process, key decisions, and the trade-offs you made.]</em></p>
       </div>
     </section>
 
@@ -83,10 +104,10 @@
       <img src="img/coming.png" alt="" width="1200" height="900" loading="lazy" decoding="async" class="case-img" />
     </section>
 
-    <!-- TEXT SECTION -->
+    <!-- OUTCOME -->
     <section class="case-section">
       <div class="case-text-block">
-        <p class="case-body"><span class="case-label-inline">The Outcome</span> Add your text here. Describe results, learnings, or reflections on the project.</p>
+        <p class="case-body"><span class="case-label-inline">The Outcome</span> <em>[Add results, learnings, and reflections here — what shipped, what you'd do differently, and what this project taught you about designing alongside engineers.]</em></p>
       </div>
     </section>
 
