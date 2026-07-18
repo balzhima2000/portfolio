@@ -63,58 +63,118 @@
     <section class="case-hero">
     <section class="title-block">
       <p class="case-client">NET WORTH TRACKER</p>
-      <h1 class="case-title">Redesigning a personal finance app for clarity and trust</h1>
+      <h1 class="case-title">Redesigning a net worth tracker so a 30-second glance feels as trustworthy as a deep dive</h1>
     </section>
       <div class="case-tags">
         <span class="wc-tags">product design</span>
+        <span class="wc-tags">design system</span>
         <span class="wc-tags">UI</span>
         <span class="wc-tags">UX</span>
-        <span class="wc-tags">design system</span>
       </div>
     </section>
 
       <div class="case-meta">
-        <p class="case-date">Product design · UI/UX · Design system, 2026</p>
+        <p class="case-date">Product design · Design system · Built with one developer, 2026</p>
       </div>
 
-    <!-- HERO IMAGE -->
+    <!-- HERO IMAGE — final dashboard, light + dark -->
     <section class="case-image-full">
       <img src="img/coming.png" alt="" width="1200" height="900" fetchpriority="high" decoding="async" class="case-img" />
     </section>
 
-    <!-- BRIEF -->
+    <!-- THE PROBLEM -->
     <section class="case-section">
       <div class="case-text-block">
-        <p class="case-body"><span class="case-label-inline">The Brief</span> A personal net worth tracker for the financially literate, FIRE-minded investor — someone who wants to check their finances at a glance and, now and then, dive deep. The existing app worked, but it read like a spreadsheet: no visual hierarchy, inconsistent number formatting, and the features people used most were buried next to the ones they rarely touched. The goal was to rebuild trust through clarity. <em>[Replace with your own framing of the problem and constraints.]</em></p>
+        <p class="case-body"><span class="case-label-inline">The problem</span> This is a net worth tracker for people who take their money seriously — financially literate, FIRE-minded, checking in often. The app already worked: it added up your accounts, tracked spending, projected retirement. But it read like a spreadsheet someone had coloured in. The same balance appeared in three different fonts. A floating “+” button hovered over the content and never said what it added. The retirement calculator — a thing you set up once a year — lived on the home screen you open every day. It did the maths; it just didn’t feel like something you’d trust with your money. <em>[Replace with your own framing — and a real detail or quote if you have one.]</em></p>
       </div>
     </section>
 
-    <!-- IMAGE -->
+    <!-- IMAGE — the "before": old dashboard -->
     <section class="case-image-full">
       <img src="img/coming.png" alt="" width="1200" height="900" loading="lazy" decoding="async" class="case-img" />
     </section>
 
-    <!-- APPROACH -->
+    <!-- MY ROLE -->
     <section class="case-section">
       <div class="case-text-block">
-        <p class="case-body"><span class="case-label-inline">The Approach</span> I led with a single principle: an element's prominence should match how often it's used and how relevant it is in that moment — checking-mode first, deep-dive second. Colour was tied to meaning rather than decoration: the interface stays greyscale except where money moves, with lime for gains and orange for losses. A token-first design system produced light and dark modes from one source of truth. <em>[Add your process, key decisions, and the trade-offs you made.]</em></p>
+        <p class="case-body"><span class="case-label-inline">My role</span> I designed the product and built its design system, then implemented most of the front-end alongside the developer. Every decision had to survive contact with real code — I couldn’t propose a chart Recharts couldn’t draw, or a token that wouldn’t map cleanly to a CSS variable. Designing and shipping in the same head turned out to be the most useful constraint in the project.</p>
       </div>
     </section>
 
-    <!-- TWO COLUMN IMAGES -->
+    <!-- TWO MODES -->
+    <section class="case-section">
+      <div class="case-text-block">
+        <p class="case-body"><span class="case-label-inline">Two modes, not one</span> The person I designed for does two different things with this app. Most days it’s a checking glance — thirty seconds, “am I okay?” Once a week it’s a deep dive — rebalancing, reading the trend, adjusting a goal. The old app treated both the same. I designed the glance first: what has to be legible in the time it takes to unlock your phone? Everything else earns its place behind that.</p>
+      </div>
+    </section>
+
+    <!-- THE PRINCIPLE -->
+    <section class="case-section">
+      <div class="case-text-block">
+        <p class="case-body"><span class="case-label-inline">One rule for what goes where</span> I gave myself a single rule to settle every layout argument: an element’s prominence should match how often it’s used, times how relevant it is right now. It sounds obvious written down, but it’s the reason the retirement calculator moved off the home screen and a glanceable progress card took its place — you monitor a goal daily, you configure it twice a year. Same feature, split by frequency of use.</p>
+      </div>
+    </section>
+
+    <!-- TWO COLUMN IMAGES — FIRE calculator before / after the split -->
     <section class="case-image-two">
       <img src="img/coming.png" alt="" width="1200" height="900" loading="lazy" decoding="async" class="case-img" />
       <img src="img/coming.png" alt="" width="1200" height="900" loading="lazy" decoding="async" class="case-img" />
     </section>
 
-    <!-- OUTCOME -->
+    <!-- THE FAB DECISION -->
     <section class="case-section">
       <div class="case-text-block">
-        <p class="case-body"><span class="case-label-inline">The Outcome</span> <em>[Add results, learnings, and reflections here — what shipped, what you'd do differently, and what this project taught you about designing alongside engineers.]</em></p>
+        <p class="case-body"><span class="case-label-inline">Killing the floating button</span> The floating “+” is a mobile cliché: one ambiguous control that hides what it does and covers the content underneath. I first tried to make it smarter. Then I cut it. In its place, three labelled actions — Trade, Income, Expense — sit where you’d actually use them, each saying exactly what it does. I changed my mind on this one mid-project: the first direction was cleverer, the second was clearer.</p>
       </div>
     </section>
 
-    <!-- FULL IMAGE -->
+    <!-- NUMBERS YOU CAN TRUST -->
+    <section class="case-section">
+      <div class="case-text-block">
+        <p class="case-body"><span class="case-label-inline">Numbers you can trust</span> Nothing erodes confidence in a finance app faster than figures that don’t line up. The old screens mixed fonts and skipped thousands separators, so a balance looked slightly different in every place it appeared. I set every number in one tabular treatment — same face, aligned decimals, comma thousands — so a value reads as the same value everywhere. Trust in a finance product is mostly consistency.</p>
+      </div>
+    </section>
+
+    <!-- COLOR AS MEANING -->
+    <section class="case-section">
+      <div class="case-text-block">
+        <p class="case-body"><span class="case-label-inline">Colour only where money moves</span> The whole interface is greyscale except for one thing: money direction. Lime for a gain, orange for a loss, and nothing else coloured at all — the accent, the nav, the primary button are all monochrome. It ties colour to meaning instead of decoration, and it keeps the dashboard calm until something actually moves. I trialled a warmer palette and a violet accent and threw both out; they were nice, but they didn’t mean anything. One honest trade-off: the orange fails WCAG contrast as small text on white (about 2.8:1). I kept it — the identity was worth more than the guideline here — and I documented the decision rather than pretend it wasn’t one.</p>
+      </div>
+    </section>
+
+    <!-- FULL IMAGE — the colour system on the dashboard -->
+    <section class="case-image-full">
+      <img src="img/coming.png" alt="" width="1200" height="900" loading="lazy" decoding="async" class="case-img" />
+    </section>
+
+    <!-- THE SYSTEM, ENFORCED -->
+    <section class="case-section">
+      <div class="case-text-block">
+        <p class="case-body"><span class="case-label-inline">A design system nobody was using</span> The file already had a spacing scale. Almost nothing used it — 19 properties in the entire design file were actually bound to a spacing token, and the single most common value, the standard card padding, wasn’t even on the scale. The system existed as documentation, not as a constraint. I bound the whole file to it, from 19 properties to roughly 8,360, and rewrote 252 spacing classes in the code to match. The interesting part wasn’t the mechanical snapping; it was where the rule broke down. Half the off-scale values sat exactly between two tokens, so “snap to nearest” was a coin flip a thousand times over, and the button sizes collapsed onto each other until I hand-set them back apart. A system serves the design, not the reverse — the exceptions are the point.</p>
+      </div>
+    </section>
+
+    <!-- TWO COLUMN IMAGES — tokens / spacing scale / component set -->
+    <section class="case-image-two">
+      <img src="img/coming.png" alt="" width="1200" height="900" loading="lazy" decoding="async" class="case-img" />
+      <img src="img/coming.png" alt="" width="1200" height="900" loading="lazy" decoding="async" class="case-img" />
+    </section>
+
+    <!-- EVERY STATE -->
+    <section class="case-section">
+      <div class="case-text-block">
+        <p class="case-body"><span class="case-label-inline">Every state, on purpose</span> The button had one look; I gave the system nine — every combination of style and state, plus loading and disabled. Empty, loading, error, and success were designed rather than discovered in production. Unglamorous work, but it’s the difference between a screen and a product.</p>
+      </div>
+    </section>
+
+    <!-- OUTCOME / REFLECTION -->
+    <section class="case-section">
+      <div class="case-text-block">
+        <p class="case-body"><span class="case-label-inline">What shipped, and what I learned</span> It shipped: the redesign is live, built on the token system, in light and dark from a single source of truth. What I took from it is that designing next to the code makes you a better designer, not a slower one — I killed ideas early because I knew what they’d cost to build, and I trusted the ones that survived. <em>[Add a real outcome here if you have one — a user reaction, an adoption number, a before/after you can point to — and one thing you’d still change.]</em></p>
+      </div>
+    </section>
+
+    <!-- FULL IMAGE — final hero shot / mobile + desktop -->
     <section class="case-image-full">
       <img src="img/coming.png" alt="" width="1200" height="900" loading="lazy" decoding="async" class="case-img" />
     </section>
