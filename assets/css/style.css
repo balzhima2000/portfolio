@@ -752,12 +752,12 @@ a.nav-item.archive {
   margin: 0 auto;
 }
 
-/* Net-worth case only: the full-bleed one-column images were too big, so cap
-   their width and pin every image to one 16:10 ratio (object-fit: cover; the
-   captured screens are already 16:10, so nothing crops). Scoped to
-   .networth-case so the other live case pages keep their full-bleed images. */
-.networth-case .case-image-full,
-.networth-case .case-image-two {
+/* Net-worth case only: cap the big one-column images (they were too big), but
+   let the two-column before/after pairs run to the page edges — they read better
+   side by side at full width (Balzhima's call). Every image is pinned to one
+   16:10 ratio (object-fit: cover; the captured screens are already 16:10, so
+   nothing crops). Scoped to .networth-case so the other case pages are untouched. */
+.networth-case .case-image-full {
   max-width: 900px;
 }
 .networth-case .case-img {
