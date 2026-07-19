@@ -752,6 +752,20 @@ a.nav-item.archive {
   margin: 0 auto;
 }
 
+/* Net-worth case only: the full-bleed one-column images were too big, so cap
+   their width and pin every image to one 16:10 ratio (object-fit: cover; the
+   captured screens are already 16:10, so nothing crops). Scoped to
+   .networth-case so the other live case pages keep their full-bleed images. */
+.networth-case .case-image-full,
+.networth-case .case-image-two {
+  max-width: 900px;
+}
+.networth-case .case-img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+}
+
 .case-section {
   width: 100%;
   max-width: 800px;
