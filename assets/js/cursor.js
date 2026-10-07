@@ -117,7 +117,7 @@
 
   const attached = new Set()
   const attachListeners = () => {
-    const els = document.querySelectorAll('a:not(.under-construction), button, span[style*="cursor"], [role="button"], .archive-img, .archive-item video')
+    const els = document.querySelectorAll('a:not(.under-construction), .work-card:not(.under-construction), button, span[style*="cursor"], [role="button"], .archive-img, .archive-item video')
     els.forEach((el) => {
       if (attached.has(el)) return
       el.addEventListener("mouseenter", startCycle)
@@ -140,6 +140,18 @@
       })
     })
   }
+
+  // Whole work card is the click target, not just the title link. Native
+  // carousel scrolling is untouched: a scroll/swipe doesn't fire `click`.
+  document.querySelectorAll('.work-card:not(.under-construction)').forEach((card) => {
+    const link = card.querySelector('a.wc-title')
+    if (!link) return
+    card.style.cursor = 'pointer'
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return
+      window.location.href = link.href
+    })
+  })
 
   attachListeners()
   attachUnderConstructionListeners()
