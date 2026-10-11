@@ -272,8 +272,7 @@ main {
 }
 .portrait {
   width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
+  height: auto;
 }
 .portrait-caption {
   font-size: 12px;
